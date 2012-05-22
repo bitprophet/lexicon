@@ -21,11 +21,17 @@ class AliasDict_(Spec):
 
     class unalias:
         def unsets_aliases(self):
-            skip()
+            ad = AliasDict()
+            ad['realkey'] = 'value'
+            ad.alias('myalias', to='realkey')
+            eq_(ad['myalias'], 'value')
+            ad.unalias('myalias')
+            assert 'myalias' not in ad
 
         @raises(KeyError)
         def raises_KeyError_on_nonexistent_alias(self):
-            skip()
+            ad = AliasDict()
+            ad.unalias('lol no')
 
     def membership_tests(self):
         ad = AliasDict()
