@@ -56,6 +56,7 @@ class AliasDict_(Spec):
         ad['myalias']
 
     class dangling_aliases:
+        "dangling aliases"
         @raises(KeyError)
         def raise_KeyError_on_access(self):
             ad = AliasDict()
@@ -76,6 +77,7 @@ class AliasDict_(Spec):
             ad['myalias']
 
     class recursive_aliasing:
+        "recursive aliasing"
         def _recursive_aliases(self):
             ad = AliasDict()
             ad.alias('alias1', to='realkey')
