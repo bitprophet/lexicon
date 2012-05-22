@@ -1,2 +1,4 @@
 # Development requirements. There are no runtime/install requirements.
 spec
+# Ourselves
+-e .
