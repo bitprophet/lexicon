@@ -89,13 +89,13 @@ class AliasDict_(Spec):
         def works_in_base_case(self):
             self._recursive_aliases()
 
-        def does_not_recursively_unalias(self):
+        def unalias_is_not_recursive(self):
             ad = self._recursive_aliases()
             ad.unalias('alias2')
             assert 'alias1' in ad
             eq_(ad['alias1'], 'value')
 
-        def does_recursively_delete(self):
+        def deletion_is_recursive(self):
             ad = self._recursive_aliases()
             del ad['alias2']
             assert 'realkey' not in ad
