@@ -57,6 +57,9 @@ unaliased key.
 * `d.key = 'value'` (aka `__setattr__`): Maps directly to `d['key'] = 'value'`.
 * `d.key` (aka `__getattr__`): Maps directly to `d['key']`.
 * `del d.key` (aka `__delattr__`): Maps directly to `del d['key']`.
+* Collisions between "real" or pre-existing attributes, and
+  attributes-as-dict-keys, always results in the real attribute winning. Thus
+  it isn't possible to use attribute access to access e.g. `d['get']`.
 
 ### `Lexicon`
 
