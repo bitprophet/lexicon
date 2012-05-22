@@ -9,6 +9,8 @@ Lexicon is a simple collection of `dict` subclasses providing extra power:
     `active_groups = AliasDict({'ops': True, 'biz': True, 'dev': True,
     'product': True})` one can make an alias `'tech'` mapping to `('ops',
     'dev')` and then e.g. `active_groups['tech'] = False`.
+    * Aliasing is recursive: an alias pointing to another alias will behave as
+    if it points to the other alias' target.
 * `AttributeDict`, supporting attribute read & write access, e.g.
   `mydict = AttributeDict({'foo': 'bar'})` exhibits `mydict.foo` and
   `mydict.foo = 'new value'`.
@@ -44,13 +46,21 @@ unaliased key.
 * `'myalias' in d` (aka `__contains__`): Returns True when given an alias, so
   if `myalias` is an alias to some other key, dictionary membership tests will
   behave as if `myalias` is set.
-* `del d['myalias']` (aka `__del__`): This effectively becomes `del
+* `del d['myalias']` (aka `__delitem__`): This effectively becomes `del
   d['realkey']` -- to remove the alias itself, use `unalias()`.
 * `del d['realkey']`: Deletes the real key/value pair (i.e. it calls
   `dict.__del__`) but doesn't touch any aliases pointing to `realkey`.
     * As a result, "dangling" aliases pointing to nonexistent keys will raise
     `KeyError` on access, but will continue working if the target key is
     repopulated later.
+
+Caveats:
+
+* Because of the single-key/multi-key duality, `AliasDict` is incapable of
+  honoring non-string-type keys when aliasing (it must test `isinstance(key,
+  basestring)` to tell strings apart from non-string iterables).
+    * `AliasDict` instances may still *use* non-string keys, of course -- it
+    just can't use them as alias targets.
 
 ### `AttributeDict`
 
