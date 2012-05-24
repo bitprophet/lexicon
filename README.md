@@ -27,7 +27,7 @@ You can install the [development
 version](https://github.com/bitprophet/lexicon/tarball/master#egg=lexicon-dev)
 via `pip install lexicon==dev`.
 
-## API
+## MOAR
 
 ### `AliasDict`
 
