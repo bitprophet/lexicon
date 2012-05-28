@@ -1,3 +1,5 @@
+import copy
+
 from spec import Spec, eq_
 
 from lexicon import Lexicon
@@ -27,3 +29,11 @@ class Lexicon_(Spec):
         l.notget = 'value'
         assert callable(l.get)
         assert l.get != 'value'
+
+    def ensure_deepcopy_works(self):
+        lex = Lexicon()
+        lex['foo'] = 'bar'
+        eq_(lex.foo, 'bar')
+        lex2 = copy.deepcopy(lex)
+        lex2.foo = 'biz'
+        assert lex2.foo != lex.foo
