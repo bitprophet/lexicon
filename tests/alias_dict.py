@@ -1,3 +1,5 @@
+import copy
+
 from spec import Spec, eq_, ok_, raises, skip
 
 from lexicon import AliasDict
@@ -102,3 +104,15 @@ class AliasDict_(Spec):
             ad['realkey'] = 'newvalue'
             assert 'alias1' in ad
             eq_(ad['alias1'], 'newvalue')
+
+    def deepcopy_copies_aliases_correctly(self):
+        a1 = AliasDict({'key1': 'val1', 'key2': 'val2'})
+        a1.alias('myalias', to='key1')
+        eq_(a1['myalias'], 'val1')
+        a2 = copy.deepcopy(a1)
+        assert 'key1' in a2
+        eq_(a2['key2'], 'val2')
+        a1.unalias('myalias')
+        assert 'myalias' not in a1
+        assert 'myalias' in a2
+        eq_(a2['myalias'], 'val1')
