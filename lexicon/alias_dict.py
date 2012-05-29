@@ -11,7 +11,7 @@ class AliasDict(dict):
 
     def _handle(self, key, value, single, multi, unaliased):
         # Attribute existence test required to not blow up when deepcopy'd
-        if hasattr(self, 'aliases') and key in self.aliases:
+        if key in getattr(self, 'aliases', {}):
             target = self.aliases[key]
             # Single-string targets
             if isinstance(target, basestring):
