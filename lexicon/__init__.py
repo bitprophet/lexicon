@@ -16,3 +16,11 @@ class Lexicon(AttributeDict, AliasDict):
         # grows one.
         dict.__init__(self, *args, **kwargs)
         dict.__setattr__(self, 'aliases', {})
+
+    def __getattr__(self, key):
+        # Intercept deepcopy/etc driven access to self.aliases when not
+        # actually set. (Only a problem for us, due to abovementioned combo of
+        # Alias and Attribute Dicts, so not solvable in a parent alone.)
+        if key == 'aliases' and key not in self.__dict__:
+            self.__dict__[key] = {}
+        return super(Lexicon, self).__getattr__(key)
