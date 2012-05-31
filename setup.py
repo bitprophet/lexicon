@@ -23,7 +23,7 @@ setup(
     long_description=long_description,
     author='Jeff Forcier',
     author_email='jeff@bitprophet.org',
-    url='https//github.com/bitprophet/lexicon',
+    url='https://github.com/bitprophet/lexicon',
 
     packages=["lexicon"],
 
