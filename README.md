@@ -34,14 +34,16 @@ via `pip install lexicon==dev`.
 In all examples, `'myalias'` is the alias and `'realkey'` is the "real",
 unaliased key.
 
-* `alias(from_='myalias', to='realkey')`: Alias `myalias` to `realkey` so
+* `alias(from_'myalias', to='realkey')`: Alias `myalias` to `realkey` so
   `d['myalias']` behaves exactly like `d['realkey']` for both reads and writes.
+    * `from_` is the first keyword argument, but typically it can be omitted
+    and still reads fine. See below examples for this usage.
   See below for details on how an alias affects other dict operations.
-* `alias(from_='myalias', to=('realkey', 'otherrealkey'))`: Alias `myalias` to
+* `alias('myalias', to=('realkey', 'otherrealkey'))`: Alias `myalias` to
   both `realkey` and `otherrealkey`. As you might expect, this only works well
   for writes, as there is never any guarantee that all targets of the alias
   will contain the same value.
-* `unalias(from_='myalias')`: Removes the `myalias` alias; any subsequent
+* `unalias('myalias')`: Removes the `myalias` alias; any subsequent
   reads/writes to `myalias` will behave as normal for a regular `dict`.
 * `'myalias' in d` (aka `__contains__`): Returns True when given an alias, so
   if `myalias` is an alias to some other key, dictionary membership tests will
