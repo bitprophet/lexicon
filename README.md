@@ -27,6 +27,11 @@ You can install the [development
 version](https://github.com/bitprophet/lexicon/tarball/master#egg=lexicon-dev)
 via `pip install lexicon==dev`.
 
+If you have a clone of the source repository, you can run the tests like so:
+
+* `pip install -r requirements.txt`
+* `spec`
+
 ## API
 
 ### `AliasDict`
