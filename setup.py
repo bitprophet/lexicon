@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import os
 import sys
 
 # Support setuptools or distutils
@@ -12,7 +13,7 @@ except ImportError:
 import lexicon
 v = lexicon.__version__
 
-long_description = open('README.md').read()
+long_description = open(os.path.join(os.path.dirname(__file__), 'README.md')).read()
 
 setup(
     name='lexicon',
