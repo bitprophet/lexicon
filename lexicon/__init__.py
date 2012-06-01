@@ -1,5 +1,11 @@
-from attribute_dict import AttributeDict
-from alias_dict import AliasDict
+import sys
+
+if sys.version_info > (3, ):
+    from lexicon.attribute_dict import AttributeDict
+    from lexicon.alias_dict import AliasDict
+else:
+    from attribute_dict import AttributeDict
+    from alias_dict import AliasDict
 
 
 __version__ = "0.1.1"
