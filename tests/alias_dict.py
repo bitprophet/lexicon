@@ -116,3 +116,23 @@ class AliasDict_(Spec):
         assert 'myalias' not in a1
         assert 'myalias' in a2
         eq_(a2['myalias'], 'val1')
+
+    class aliases_are_not_real_keys:
+        "aliases are not real keys"
+
+        def setup(self):
+            self.a = AliasDict({'key1': 'val1', 'key2': 'val2'})
+            self.a.alias('myalias', 'key1')
+
+        def keys_returns_only_real_keys(self):
+            "keys() only returns real keys, not aliases"
+            assert 'myalias' not in self.a.keys()
+            assert 'key1' in self.a.keys()
+            assert 'key2' in self.a.keys()
+
+        def items_returns_only_real_keys(self):
+            "items() and iteritems() only return real keys, not aliases"
+            assert ('key1', 'val1') in self.a.items()
+            assert ('key2', 'val2') in self.a.iteritems()
+            assert ('myalias', 'val1') not in self.a.items()
+            assert ('myalias', 'val1') not in self.a.iteritems()
