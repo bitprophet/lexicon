@@ -35,6 +35,15 @@ class AliasDict_(Spec):
             ad = AliasDict()
             ad.unalias('lol no')
 
+    class aliases_of:
+        def returns_list_of_aliases_for_given_real_key(self):
+            ad = AliasDict()
+            eq_(ad.aliases_of('realkey'), [])
+            ad.alias('myalias', to='realkey')
+            eq_(ad.aliases_of('realkey'), ['myalias'])
+            ad.unalias('myalias')
+            eq_(ad.aliases_of('realkey'), [])
+
     def membership_tests(self):
         ad = AliasDict()
         ad.alias('myalias', to='realkey')

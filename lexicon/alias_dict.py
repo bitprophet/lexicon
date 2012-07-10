@@ -9,6 +9,9 @@ class AliasDict(dict):
     def unalias(self, from_):
         del self.aliases[from_]
 
+    def aliases_of(self, to):
+        return [key for key, value in self.aliases.iteritems() if value == to]
+
     def _handle(self, key, value, single, multi, unaliased):
         # Attribute existence test required to not blow up when deepcopy'd
         if key in getattr(self, 'aliases', {}):
