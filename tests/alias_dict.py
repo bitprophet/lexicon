@@ -36,24 +36,24 @@ class AliasDict_(Spec):
             ad.unalias('lol no')
 
     class aliases_of:
+        def setup(self):
+            self.ad = AliasDict()
+
         def returns_list_of_aliases_for_given_real_key(self):
-            ad = AliasDict()
-            eq_(ad.aliases_of('realkey'), [])
-            ad.alias('myalias', to='realkey')
-            eq_(ad.aliases_of('realkey'), ['myalias'])
-            ad.unalias('myalias')
-            eq_(ad.aliases_of('realkey'), [])
+            eq_(self.ad.aliases_of('realkey'), [])
+            self.ad.alias('myalias', to='realkey')
+            eq_(self.ad.aliases_of('realkey'), ['myalias'])
+            self.ad.unalias('myalias')
+            eq_(self.ad.aliases_of('realkey'), [])
 
         def returns_empty_list_for_unaliased_keys(self):
-            ad = AliasDict()
-            ad['realkey'] = 5
-            eq_(ad.aliases_of('realkey'), [])
+            self.ad['realkey'] = 5
+            eq_(self.ad.aliases_of('realkey'), [])
 
         def returns_multi_item_list_for_multiple_aliases(self):
-            ad = AliasDict()
-            ad.alias('alias1', to='realkey')
-            ad.alias('alias2', to='realkey')
-            eq_(set(ad.aliases_of('realkey')), set(['alias1', 'alias2']))
+            self.ad.alias('alias1', to='realkey')
+            self.ad.alias('alias2', to='realkey')
+            eq_(set(self.ad.aliases_of('realkey')), set(['alias1', 'alias2']))
 
     def membership_tests(self):
         ad = AliasDict()
