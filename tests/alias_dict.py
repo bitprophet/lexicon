@@ -55,6 +55,13 @@ class AliasDict_(Spec):
             self.ad.alias('alias2', to='realkey')
             eq_(set(self.ad.aliases_of('realkey')), set(['alias1', 'alias2']))
 
+        def returns_list_of_aliases_for_alias(self):
+            self.ad.alias('myalias', to='realkey')
+            result = set(self.ad.aliases_of('myalias'))
+            expected = set(['realkey'])
+            print "result: %r, expected: %r" % (result, expected)
+            eq_(result, expected)
+
     def membership_tests(self):
         ad = AliasDict()
         ad.alias('myalias', to='realkey')

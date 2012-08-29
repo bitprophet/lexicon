@@ -9,8 +9,32 @@ class AliasDict(dict):
     def unalias(self, from_):
         del self.aliases[from_]
 
-    def aliases_of(self, to):
-        return [key for key, value in self.aliases.iteritems() if value == to]
+    def aliases_of(self, name):
+        """
+        Returns other names for given real key or alias ``name``.
+
+        If given a real key, returns its aliases.
+
+        If given an alias, returns the real key it points to, plus any other
+        aliases of that real key. (The given alias itself is not included in
+        the return value.)
+        """
+        names = []
+        key = name
+        # self.aliases keys are aliases, not realkeys. Easy test to see if we
+        # should flip around to the POV of a realkey when given an alias.
+        if name in self.aliases:
+            key = self.aliases[name]
+            # Ensure the real key shows up in output.
+            names.append(key)
+        # 'key' is now a realkey, whose aliases are all keys whose value is
+        # itself. Filter out the original name given.
+        names.extend([
+            k for k,v
+            in self.aliases.iteritems()
+            if v == key and k != name
+        ])
+        return names
 
     def _handle(self, key, value, single, multi, unaliased):
         # Attribute existence test required to not blow up when deepcopy'd
