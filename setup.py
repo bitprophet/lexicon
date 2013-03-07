@@ -9,15 +9,11 @@ try:
 except ImportError:
     from distutils.core import setup
 
-# Import ourselves for version info
-import lexicon
-v = lexicon.__version__
-
 long_description = open(os.path.join(os.path.dirname(__file__), 'README.md')).read()
 
 setup(
     name='lexicon',
-    version=v,
+    version="0.2.0",
     description='Powerful dict subclass(es) with aliasing & attribute access',
     license='BSD',
 
