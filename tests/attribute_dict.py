@@ -30,7 +30,7 @@ class AttributeDict_(Spec):
         ad = AttributeDict()
         ad['get'] = 'not-a-method'
         assert callable(ad.get)
-        assert not isinstance(ad.get, six.text_type)
+        assert not isinstance(ad.get, six.string_types)
 
     def ensure_deepcopy_works(self):
         ad = AttributeDict()

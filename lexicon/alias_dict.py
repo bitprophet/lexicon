@@ -44,7 +44,7 @@ class AliasDict(dict):
         if key in getattr(self, 'aliases', {}):
             target = self.aliases[key]
             # Single-string targets
-            if isinstance(target, six.text_type):
+            if isinstance(target, six.string_types):
                 return single(self, target, value)
             # Multi-string targets
             else:
@@ -57,7 +57,7 @@ class AliasDict(dict):
             return unaliased(self, key, value)
 
     def _single(self, target):
-        return isinstance(target, six.text_type)
+        return isinstance(target, six.string_types)
 
     def __setitem__(self, key, value):
         def single(d, target, value): d[target] = value

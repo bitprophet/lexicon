@@ -23,6 +23,7 @@ setup(
     url='https://github.com/bitprophet/lexicon',
 
     packages=["lexicon"],
+    install_requires=["six"],
 
     classifiers=[
           'Development Status :: 3 - Alpha',
