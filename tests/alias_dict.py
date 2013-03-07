@@ -1,5 +1,6 @@
 import copy
 
+import six
 from spec import Spec, eq_, ok_, raises, skip
 
 from lexicon import AliasDict
@@ -59,7 +60,6 @@ class AliasDict_(Spec):
             self.ad.alias('myalias', to='realkey')
             result = set(self.ad.aliases_of('myalias'))
             expected = set(['realkey'])
-            print "result: %r, expected: %r" % (result, expected)
             eq_(result, expected)
 
     def membership_tests(self):
@@ -160,6 +160,6 @@ class AliasDict_(Spec):
         def items_returns_only_real_keys(self):
             "items() and iteritems() only return real keys, not aliases"
             assert ('key1', 'val1') in self.a.items()
-            assert ('key2', 'val2') in self.a.iteritems()
+            assert ('key2', 'val2') in six.iteritems(self.a)
             assert ('myalias', 'val1') not in self.a.items()
-            assert ('myalias', 'val1') not in self.a.iteritems()
+            assert ('myalias', 'val1') not in six.iteritems(self.a)

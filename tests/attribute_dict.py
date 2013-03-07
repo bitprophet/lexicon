@@ -1,5 +1,6 @@
 import copy
 
+import six
 from spec import Spec, eq_, ok_
 
 from lexicon import AttributeDict
@@ -29,7 +30,7 @@ class AttributeDict_(Spec):
         ad = AttributeDict()
         ad['get'] = 'not-a-method'
         assert callable(ad.get)
-        assert not isinstance(ad.get, basestring)
+        assert not isinstance(ad.get, six.text_type)
 
     def ensure_deepcopy_works(self):
         ad = AttributeDict()
