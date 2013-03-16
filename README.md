@@ -30,7 +30,7 @@ via `pip install lexicon==dev`.
 
 If you have a clone of the source repository, you can run the tests like so:
 
-* `pip install -r requirements.txt`
+* `pip install -r dev-requirements.txt`
 * `spec`
 
 ## API
