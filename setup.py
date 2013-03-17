@@ -13,7 +13,7 @@ long_description = open(os.path.join(os.path.dirname(__file__), 'README.md')).re
 
 setup(
     name='lexicon',
-    version="0.2.0",
+    version="0.2.1",
     description='Powerful dict subclass(es) with aliasing & attribute access',
     license='BSD',
 
