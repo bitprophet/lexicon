@@ -31,9 +31,9 @@ class Lexicon_(Spec):
         assert l.get != 'value'
 
     def ensure_deepcopy_works(self):
-        lex = Lexicon()
-        lex['foo'] = 'bar'
-        eq_(lex.foo, 'bar')
-        lex2 = copy.deepcopy(lex)
-        lex2.foo = 'biz'
-        assert lex2.foo != lex.foo
+        l = Lexicon()
+        l['foo'] = 'bar'
+        eq_(l.foo, 'bar')
+        l2 = copy.deepcopy(l)
+        l2.foo = 'biz'
+        assert l2.foo != l.foo
