@@ -7,3 +7,8 @@ Changelog
 
 * Added ``AliasDict.aliases_of(realkey)`` for reverse lookup of what, if any,
   aliases a given real key has.
+
+0.2.0 (2013-03-07)
+==================
+
+* #8: Python 3 fixes, thanks to Donald Stufft.
