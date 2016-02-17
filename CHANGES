@@ -19,3 +19,5 @@ Changelog
 * #9: Updated ``AttributeDict`` (and by extension, ``Lexicon``) so it displays
   keys in the output of ``dir()`` (since they're also attributes). Thanks to
   Hugo Oliveira for the initial patch.
+* Support: Bumped to 1.0 because clearly this software is pretty stable!
+  Semver: a thing. (We apparently made

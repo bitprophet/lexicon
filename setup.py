@@ -13,7 +13,7 @@ long_description = open(os.path.join(os.path.dirname(__file__), 'README.md')).re
 
 setup(
     name='lexicon',
-    version="0.2.1",
+    version="1.0.0",
     description='Powerful dict subclass(es) with aliasing & attribute access',
     license='BSD',
 
@@ -26,7 +26,7 @@ setup(
     install_requires=["six"],
 
     classifiers=[
-          'Development Status :: 3 - Alpha',
+          'Development Status :: 5 - Production/Stable',
           'Environment :: Console',
           'Intended Audience :: Developers',
           'License :: OSI Approved :: BSD License',
@@ -34,8 +34,13 @@ setup(
           'Operating System :: Unix',
           'Operating System :: POSIX',
           'Programming Language :: Python',
+          'Programming Language :: Python :: 2',
           'Programming Language :: Python :: 2.6',
           'Programming Language :: Python :: 2.7',
+          'Programming Language :: Python :: 3',
+          'Programming Language :: Python :: 3.3',
+          'Programming Language :: Python :: 3.4',
+          'Programming Language :: Python :: 3.5',
           'Topic :: Software Development',
           'Topic :: Software Development :: Libraries',
           'Topic :: Software Development :: Libraries :: Python Modules',
