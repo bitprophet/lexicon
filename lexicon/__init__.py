@@ -21,3 +21,6 @@ class Lexicon(AttributeDict, AliasDict):
         if key == 'aliases' and key not in self.__dict__:
             self.__dict__[key] = {}
         return super(Lexicon, self).__getattr__(key)
+
+    def __dir__(self):
+        return dir(type(self)) + list(self.keys())
