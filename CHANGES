@@ -12,3 +12,10 @@ Changelog
 ==================
 
 * #8: Python 3 fixes, thanks to Donald Stufft.
+
+1.0.0 (2016-02-17)
+==================
+
+* #9: Updated ``AttributeDict`` (and by extension, ``Lexicon``) so it displays
+  keys in the output of ``dir()`` (since they're also attributes). Thanks to
+  Hugo Oliveira for the initial patch.
