@@ -39,3 +39,8 @@ class AttributeDict_(Spec):
         ad2 = copy.deepcopy(ad)
         ad2.foo = 'biz'
         assert ad2.foo != ad.foo
+
+    def dir_shows_keys(self):
+        ad = AttributeDict()
+        ad['foo'] = 'bar'
+        assert 'foo' in dir(ad)

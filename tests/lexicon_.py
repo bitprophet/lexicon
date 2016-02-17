@@ -37,3 +37,11 @@ class Lexicon_(Spec):
         l2 = copy.deepcopy(l)
         l2.foo = 'biz'
         assert l2.foo != l.foo
+
+    def dir_only_shows_real_keys(self):
+        "dir() only shows real keys-as-attrs, not aliases"
+        a = Lexicon({'key1': 'val1', 'key2': 'val2'})
+        a.alias('myalias', 'key1')
+        assert 'key1' in dir(a)
+        assert 'key2' in dir(a)
+        assert 'myalias' not in dir(a)
