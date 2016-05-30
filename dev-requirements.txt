@@ -10,3 +10,5 @@ spec>=0.10.0,<2.0
 # Release deps
 wheel==0.24
 twine==1.5
+# Linting
+flake8==2.4.0
