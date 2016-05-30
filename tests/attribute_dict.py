@@ -1,7 +1,7 @@
 import copy
 
 import six
-from spec import Spec, eq_, ok_
+from spec import Spec, eq_
 
 from lexicon import AttributeDict
 

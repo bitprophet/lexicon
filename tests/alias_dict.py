@@ -1,7 +1,7 @@
 import copy
 
 import six
-from spec import Spec, eq_, ok_, raises, skip
+from spec import Spec, eq_, raises
 
 from lexicon import AliasDict
 
@@ -95,8 +95,8 @@ class AliasDict_(Spec):
 
         @raises(KeyError)
         def caused_by_removal_of_target_key(self):
-            # TODO: this test probably false-passes if any line but the last raises
-            # KeyError by accident...
+            # TODO: this test probably false-passes if any line but the last
+            # raises KeyError by accident...
             ad = AliasDict()
             ad.alias('myalias', to='realkey')
             ad['realkey'] = 'value'
