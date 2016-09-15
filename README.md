@@ -26,7 +26,7 @@ subclasses providing extra power:
 
 You can install the [development
 version](https://github.com/bitprophet/lexicon/tarball/master#egg=lexicon-dev)
-via `pip install lexicon==dev`.
+via `pip install -e git+https://github.com/bitprophet/lexicon#egg=lexicon`.
 
 If you have a clone of the source repository, you can run the tests like so:
 
