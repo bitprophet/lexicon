@@ -5,8 +5,8 @@ spec>=0.10.0,<2.0
 # Ourselves
 -e .
 # Invoke, invocations for release shenanigans etc
--e git+https://github.com/pyinvoke/invoke#egg=invoke
--e git+https://github.com/pyinvoke/invocations#egg=invocations
+invoke==0.17.0
+invocations==0.18.0
 # Release deps
 wheel==0.24
 twine==1.5
