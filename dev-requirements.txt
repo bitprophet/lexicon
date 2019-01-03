@@ -11,4 +11,4 @@ invocations==0.18.0
 wheel==0.24
 twine==1.11.0
 # Linting
-flake8==2.4.0
+flake8==3.6.0
