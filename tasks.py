@@ -1,11 +1,8 @@
 from invoke import Collection
-from invocations.testing import test
+from invocations.checks import blacken
 from invocations.packaging import release
+from invocations.testing import test
 
-ns = Collection(release, test)
-ns.configure({
-    'packaging': {
-        'sign': True,
-        'wheel': True,
-    },
-})
+
+ns = Collection(test, release, blacken)
+ns.configure({"packaging": {"sign": True}})

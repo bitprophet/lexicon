@@ -37,16 +37,18 @@ class AliasDict(dict):
             names.append(key)
         # 'key' is now a realkey, whose aliases are all keys whose value is
         # itself. Filter out the original name given.
-        names.extend([
-            k for k, v
-            in six.iteritems(self.aliases)
-            if v == key and k != name
-        ])
+        names.extend(
+            [
+                k
+                for k, v in six.iteritems(self.aliases)
+                if v == key and k != name
+            ]
+        )
         return names
 
     def _handle(self, key, value, single, multi, unaliased):
         # Attribute existence test required to not blow up when deepcopy'd
-        if key in getattr(self, 'aliases', {}):
+        if key in getattr(self, "aliases", {}):
             target = self.aliases[key]
             # Single-string targets
             if isinstance(target, six.string_types):
@@ -81,7 +83,7 @@ class AliasDict(dict):
             return super(AliasDict, d).__getitem__(key)
 
         def multi(d, target, value):
-            msg = "Multi-target aliases have no well-defined value and can't be read." # noqa
+            msg = "Multi-target aliases have no well-defined value and can't be read."  # noqa
             raise ValueError(msg)
 
         return self._handle(key, None, single, multi, unaliased)
