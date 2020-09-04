@@ -21,8 +21,12 @@ jobs:
           <<: *deps
       - python/save-cache:
           <<: *deps
-      - run: env
-      - run: inv test
+      - run:
+          name: Test
+          command: inv test
+      - run:
+          name: Lint
+          command: flake8
 
 workflows:
   main:

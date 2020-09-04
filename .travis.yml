@@ -9,7 +9,6 @@ python:
 install:
   - pip install -r dev-requirements.txt
 script:
-  - env
   - inv test
   - flake8
 notifications:
