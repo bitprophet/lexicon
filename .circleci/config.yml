@@ -11,6 +11,8 @@ orbs:
 jobs:
   build:
     executor: python/default
+    environment:
+      TERM: screen-256color
     steps:
       - checkout
       - python/load-cache:
@@ -19,9 +21,8 @@ jobs:
           <<: *deps
       - python/save-cache:
           <<: *deps
-      - run:
-          command: inv test
-          name: Test
+      - run: env
+      - run: inv test
 
 workflows:
   main:
