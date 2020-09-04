@@ -9,7 +9,7 @@ orbs:
   python: circleci/python@0.3.2
 
 jobs:
-  build-and-test:
+  build:
     executor: python/default
     steps:
       - checkout
@@ -26,4 +26,4 @@ jobs:
 workflows:
   main:
     jobs:
-      - build-and-test
+      - build
