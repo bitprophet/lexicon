@@ -30,7 +30,8 @@ via `pip install -e git+https://github.com/bitprophet/lexicon#egg=lexicon`.
 
 If you have a clone of the source repository, you can run the tests like so:
 
-* `pip install -r dev-requirements.txt`
+* Install [poetry](https://python-poetry.org/)
+* `poetry install`
 * `spec`
 
 ## API

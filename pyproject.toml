@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "lexicon"
+version = "1.0.0"
+description = "Powerful dict subclass(es) with aliasing & attribute access"
+authors = ["Jeff Forcier <jeff@bitprophet.org>"]
+license = "BSD-2-Clause"
+readme = "README.md"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: Unix",
+    "Operating System :: POSIX",
+    "Topic :: Software Development",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+repository = "https://github.com/bitprophet/lexicon"
+urls.Issues = "https://github.com/bitprophet/lexicon/issues"
+
+[tool.poetry.dependencies]
+python = "^2.7 || ^3.4"
+six = "^1"
+
+[tool.poetry.dev-dependencies]
+# Python 3 compat spec (TODO: switch to pytest)
+spec = "1.4.1"
+# Invoke, invocations for release shenanigans etc
+invoke = "0.17.0"
+invocations = "0.18.0"
+# Release deps
+wheel = "0.24"
+twine = "1.11.0"
+# Linting
+flake8 = "3.6.0"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
