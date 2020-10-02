@@ -10,7 +10,9 @@ orbs:
 
 jobs:
   build:
-    executor: python/default
+    executor:
+      name: python/default
+      tag: "3.7"
     environment:
       TERM: screen-256color
     steps:
@@ -27,6 +29,7 @@ jobs:
       - run:
           name: Lint
           command: flake8
+
 
 workflows:
   main:
