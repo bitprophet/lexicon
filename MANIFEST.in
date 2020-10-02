@@ -1,5 +1,0 @@
-include LICENSE
-include README.md
-include dev-requirements.txt
-recursive-include tests *
-recursive-exclude tests *.pyc *.pyo

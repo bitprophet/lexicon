@@ -4,7 +4,10 @@ version = "1.0.0"
 description = "Powerful dict subclass(es) with aliasing & attribute access"
 authors = ["Jeff Forcier <jeff@bitprophet.org>"]
 license = "BSD-2-Clause"
+
 readme = "README.md"
+include = ["tests/*"]
+
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Environment :: Console",
@@ -37,5 +40,5 @@ twine = "1.11.0"
 flake8 = "3.6.0"
 
 [build-system]
-requires = ["poetry>=0.12"]
-build-backend = "poetry.masonry.api"
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
