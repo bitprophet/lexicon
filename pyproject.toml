@@ -5,7 +5,7 @@ description = "Powerful dict subclass(es) with aliasing & attribute access"
 authors = ["Jeff Forcier <jeff@bitprophet.org>"]
 license = "BSD-2-Clause"
 
-readme = "README.md"
+readme = "README.rst"
 include = ["tests/*"]
 
 classifiers = [
@@ -34,8 +34,7 @@ spec = "1.4.1"
 invoke = "0.17.0"
 invocations = "0.18.0"
 # Release deps
-wheel = "0.24"
-twine = "1.11.0"
+twine = "< 2"
 # Linting
 flake8 = "3.6.0"
 
