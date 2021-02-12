@@ -1,7 +1,7 @@
 ## WHAT
 
-Lexicon is a simple Python 2.7+ and 3.4+ compatible collection of `dict`
-subclasses providing extra power:
+Lexicon is a simple collection of Python `dict` subclasses providing extra
+power:
 
 * `AliasDict`, a dictionary supporting both simple and complex key aliasing:
     * Alias a single key to another key, so that e.g. `mydict['bar']` points to

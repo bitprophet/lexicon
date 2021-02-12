@@ -21,3 +21,9 @@ Changelog
   Hugo Oliveira for the initial patch.
 * Support: Bumped to 1.0 because clearly this software is pretty stable!
   Semver: a thing. (We apparently made
+
+2.0.0 (2021-02-XX)
+==================
+
+* Dropped support for Python <3.6
+* Migrated CI to CircleCI
