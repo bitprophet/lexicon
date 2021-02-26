@@ -2,11 +2,7 @@
 
 import os
 
-# Support setuptools or distutils
-try:
-    from setuptools import setup
-except ImportError:
-    from distutils.core import setup
+from setuptools import setup
 
 with open(os.path.join(os.path.dirname(__file__), "README.rst")) as fd:
     long_description = fd.read()
