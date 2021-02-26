@@ -1,11 +1,3 @@
-# Normal import
-try:
-    import six
-# Horrible, awful hack to work when vendorized
-except ImportError:
-    from .. import six
-
-
 class AliasDict(dict):
     def __init__(self, *args, **kwargs):
         super(AliasDict, self).__init__(*args, **kwargs)
@@ -40,7 +32,7 @@ class AliasDict(dict):
         names.extend(
             [
                 k
-                for k, v in six.iteritems(self.aliases)
+                for k, v in self.aliases.items()
                 if v == key and k != name
             ]
         )
@@ -51,7 +43,7 @@ class AliasDict(dict):
         if key in getattr(self, "aliases", {}):
             target = self.aliases[key]
             # Single-string targets
-            if isinstance(target, six.string_types):
+            if isinstance(target, str):
                 return single(self, target, value)
             # Multi-string targets
             else:
@@ -64,7 +56,7 @@ class AliasDict(dict):
             return unaliased(self, key, value)
 
     def _single(self, target):
-        return isinstance(target, six.string_types)
+        return isinstance(target, str)
 
     def __setitem__(self, key, value):
         def single(d, target, value):
