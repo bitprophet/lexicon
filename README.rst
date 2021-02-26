@@ -1,3 +1,14 @@
+.. image:: https://img.shields.io/pypi/l/lexicon
+    :alt: PyPI - License
+.. image:: https://img.shields.io/pypi/v/lexicon
+    :alt: PyPI - Package Version
+.. image:: https://img.shields.io/pypi/pyversions/lexicon
+    :alt: PyPI - Python Version
+.. image:: https://img.shields.io/circleci/build/github/bitprophet/lexicon/main
+    :alt: CircleCI
+.. image:: https://img.shields.io/codecov/c/gh/bitprophet/lexicon
+    :alt: Codecov
+
 WHAT
 ====
 
