@@ -1,28 +1,25 @@
 import copy
 
-import six
-from spec import Spec, eq_
-
 from lexicon import AttributeDict
 
 
-class AttributeDict_(Spec):
+class AttributeDict_:
     def allows_attribute_reads(self):
         ad = AttributeDict()
         ad["foo"] = "bar"
-        eq_(ad["foo"], ad.foo)
+        assert ad["foo"] == ad.foo
 
     def allows_attribute_writes(self):
         ad = AttributeDict()
         ad["foo"] = "bar"
-        eq_(ad["foo"], "bar")
+        assert ad["foo"] == "bar"
         ad.foo = "notbar"
-        eq_(ad["foo"], "notbar")
+        assert ad["foo"] == "notbar"
 
     def honors_attribute_deletion(self):
         ad = AttributeDict()
         ad["foo"] = "bar"
-        eq_(ad.foo, "bar")
+        assert ad.foo == "bar"
         del ad.foo
         assert "foo" not in ad
 
@@ -30,12 +27,12 @@ class AttributeDict_(Spec):
         ad = AttributeDict()
         ad["get"] = "not-a-method"
         assert callable(ad.get)
-        assert not isinstance(ad.get, six.string_types)
+        assert not isinstance(ad.get, str)
 
     def ensure_deepcopy_works(self):
         ad = AttributeDict()
         ad["foo"] = "bar"
-        eq_(ad.foo, "bar")
+        assert ad.foo == "bar"
         ad2 = copy.deepcopy(ad)
         ad2.foo = "biz"
         assert ad2.foo != ad.foo

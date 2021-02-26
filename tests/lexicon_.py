@@ -1,15 +1,13 @@
 import copy
 
-from spec import Spec, eq_
-
 from lexicon import Lexicon
 
 
-class Lexicon_(Spec):
+class Lexicon_:
     def attributes_work(self):
         lex = Lexicon()
         lex.foo = "bar"
-        eq_(lex["foo"], lex.foo)
+        assert lex["foo"] == lex.foo
 
     def aliases_work(self):
         lex = Lexicon()
@@ -33,7 +31,7 @@ class Lexicon_(Spec):
     def ensure_deepcopy_works(self):
         lex = Lexicon()
         lex["foo"] = "bar"
-        eq_(lex.foo, "bar")
+        assert lex.foo == "bar"
         lex2 = copy.deepcopy(lex)
         lex2.foo = "biz"
         assert lex2.foo != lex.foo

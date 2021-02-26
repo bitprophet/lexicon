@@ -27,3 +27,5 @@ Changelog
 
 * Dropped support for Python <3.6
 * Migrated CI to CircleCI
+* Migrated tests to pytest(-relaxed)
+* Changed README to ReStructured Text (from Markdown)

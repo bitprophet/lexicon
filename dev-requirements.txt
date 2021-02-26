@@ -1,7 +1,7 @@
 # Development requirements. There are no runtime/install requirements.
 
-# Python 3 compat spec
-spec>=0.10.0,<2.0
+# Testing
+pytest-relaxed==1.1.5
 # Invoke, invocations for release shenanigans etc
 invoke==1.5.0
 invocations==2.0.0

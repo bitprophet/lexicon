@@ -8,7 +8,7 @@ try:
 except ImportError:
     from distutils.core import setup
 
-with open(os.path.join(os.path.dirname(__file__), "README.md")) as fd:
+with open(os.path.join(os.path.dirname(__file__), "README.rst")) as fd:
     long_description = fd.read()
 
 setup(
