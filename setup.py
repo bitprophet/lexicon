@@ -17,8 +17,10 @@ setup(
     author_email="jeff@bitprophet.org",
     url="https://github.com/bitprophet/lexicon",
     project_urls={
-        "Repository": "https://github.com/bitprophet/lexicon",
-        "Issues": "https://github.com/bitprophet/lexicon/issues",
+        "Home": "https://github.com/bitprophet/lexicon#what",
+        "Source": "https://github.com/bitprophet/lexicon",
+        "Changelog": "https://github.com/bitprophet/lexicon/blob/main/CHANGES",
+        "CI": "https://app.circleci.com/pipelines/github/bitprophet/lexicon",
     },
     packages=["lexicon"],
     classifiers=[
