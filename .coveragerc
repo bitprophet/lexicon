@@ -1,5 +1,5 @@
 [run]
 branch = True
-source =
-    lexicon
-    tests
+include =
+    lexicon/*.py
+    tests/*.py
