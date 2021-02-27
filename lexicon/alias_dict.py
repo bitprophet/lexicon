@@ -51,9 +51,6 @@ class AliasDict(dict):
         else:
             return unaliased(self, key, value)
 
-    def _single(self, target):
-        return isinstance(target, str)
-
     def __setitem__(self, key, value):
         def single(d, target, value):
             d[target] = value

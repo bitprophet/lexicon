@@ -63,11 +63,23 @@ class AliasDict_:
             expected = set(["realkey"])
             assert result == expected
 
-    def membership_tests(self):
+    def single_membership_tests(self):
         ad = AliasDict()
         ad.alias("myalias", to="realkey")
         ad["realkey"] = "value"
         assert "myalias" in ad
+
+    def multi_membership_test(self):
+        ad = AliasDict()
+        ad.alias("multi-alias", to=("key1", "key2"))
+        # No targets actually exist: false
+        assert "multi-alias" not in ad
+        # One target exists: still false
+        ad["key1"] = 5
+        assert "multi-alias" not in ad
+        # All exist: true
+        ad["key2"] = 5
+        assert "multi-alias" in ad
 
     def key_deletion(self):
         ad = AliasDict()
