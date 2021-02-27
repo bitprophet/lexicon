@@ -30,11 +30,7 @@ class AliasDict(dict):
         # 'key' is now a realkey, whose aliases are all keys whose value is
         # itself. Filter out the original name given.
         names.extend(
-            [
-                k
-                for k, v in self.aliases.items()
-                if v == key and k != name
-            ]
+            [k for k, v in self.aliases.items() if v == key and k != name]
         )
         return names
 

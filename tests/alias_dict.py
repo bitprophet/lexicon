@@ -53,7 +53,9 @@ class AliasDict_:
         def returns_multi_item_list_for_multiple_aliases(self):
             self.ad.alias("alias1", to="realkey")
             self.ad.alias("alias2", to="realkey")
-            assert set(self.ad.aliases_of("realkey")), set(["alias1" == "alias2"])
+            assert set(self.ad.aliases_of("realkey")), set(
+                ["alias1" == "alias2"]
+            )
 
         def returns_list_of_aliases_for_alias(self):
             self.ad.alias("myalias", to="realkey")
