@@ -13,6 +13,7 @@ setup(
     description="Powerful dict subclass(es) with aliasing & attribute access",
     license="BSD",
     long_description=long_description,
+    long_description_content_type="text/x-rst",
     author="Jeff Forcier",
     author_email="jeff@bitprophet.org",
     url="https://github.com/bitprophet/lexicon",

@@ -7,10 +7,11 @@ pytest-cov==2.11.1
 codecov==2.1.11
 # Invoke, invocations for release shenanigans etc
 invoke==1.5.0
-invocations==2.0.0
+invocations==2.1.0
 # Release deps
 wheel==0.36.2
 twine==1.15.0
+readme_renderer==29.0
 # Formatting
 black==19.10b0
 # Linting
