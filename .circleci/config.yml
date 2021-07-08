@@ -69,6 +69,14 @@ orbs:
         steps:
           - setup
           - run: inv blacken --check --diff
+      test-release:
+        executor: default
+        steps:
+          - setup
+          - run:
+              command: inv release.all --dry-run
+              environment:
+                INVOKE_PACKAGING_SIGN: ""
 
 
 workflows:
@@ -78,9 +86,11 @@ workflows:
           name: Lint
       - bitprophet/format:
           name: Style check
-      # TODO: twine readme check
       - bitprophet/coverage:
           name: Test 3.6 (w/ coverage)
+          context: lexicon
+      - bitprophet/test-release:
+          name: Release test
           context: lexicon
       - bitprophet/test:
           name: Test << matrix.version >>
