@@ -4,12 +4,19 @@ import os
 
 from setuptools import setup
 
+# Version info -- read without importing
+_locals = {}
+with open("lexicon/_version.py") as fp:
+    exec(fp.read(), None, _locals)
+version = _locals["__version__"]
+
+# Readme
 with open(os.path.join(os.path.dirname(__file__), "README.rst")) as fd:
     long_description = fd.read()
 
 setup(
     name="lexicon",
-    version="2.0.0",
+    version=version,
     description="Powerful dict subclass(es) with aliasing & attribute access",
     license="BSD",
     long_description=long_description,
