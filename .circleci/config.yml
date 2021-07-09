@@ -75,8 +75,6 @@ orbs:
           - setup
           - run:
               command: inv release.all --dry-run
-              environment:
-                INVOKE_PACKAGING_SIGN: ""
 
 
 workflows:
