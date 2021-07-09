@@ -1,6 +1,6 @@
 from datetime import datetime
-from os import environ, getcwd
-from os.path import abspath, join, dirname
+from os import getcwd
+from os.path import abspath, join
 import sys
 
 
