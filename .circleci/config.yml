@@ -51,14 +51,7 @@ orbs:
         executor: default
         steps:
           - setup
-          # Gathers coverage data and emits terminal report (good for viewing
-          # within CI / without visiting codecov)
-          - run: inv coverage
-          # Generate XML report from that already-gathered data, for codecov
-          # (otherwise codecov generates it on its own and gets it wrong!)
-          - run: coverage xml
-          # Upload that XML to Codecov (using context secret for token)
-          - run: codecov
+          - run: inv coverage --codecov
       lint:
         executor: default
         steps:
