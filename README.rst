@@ -1,14 +1,19 @@
 |version| |python| |license| |ci| |coverage|
 
 .. |version| image:: https://img.shields.io/pypi/v/lexicon
+    :target: https://pypi.org/project/lexicon/
     :alt: PyPI - Package Version
 .. |python| image:: https://img.shields.io/pypi/pyversions/lexicon
+    :target: https://pypi.org/project/lexicon/
     :alt: PyPI - Python Version
 .. |license| image:: https://img.shields.io/pypi/l/lexicon
+    :target: https://github.com/bitprophet/lexicon/blob/main/LICENSE
     :alt: PyPI - License
 .. |ci| image:: https://img.shields.io/circleci/build/github/bitprophet/lexicon/main
+    :target: https://app.circleci.com/pipelines/github/bitprophet/lexicon
     :alt: CircleCI
 .. |coverage| image:: https://img.shields.io/codecov/c/gh/bitprophet/lexicon
+    :target: https://app.codecov.io/gh/bitprophet/lexicon
     :alt: Codecov
 
 WHAT
