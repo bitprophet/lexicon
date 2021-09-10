@@ -2,7 +2,7 @@
 Changelog
 =========
 
-- :release:`2.0.0 <2021-07-XX>`
+- :release:`2.0.0 <2021-09-10>`
 - :support:`-` Dropped support for Python <3.6
 - :support:`-` Added a ``_version`` submodule and imported its
   dunder-attributes into the top level module
