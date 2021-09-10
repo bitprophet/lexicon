@@ -1,74 +1,8 @@
 version: 2.1
 
 orbs:
-  bitprophet:
-    orbs:
-      python: circleci/python@1.3.2
-    executors:
-      # Basically extending what the python orb's executor does:
-      # - s/tag/version/
-      # - default to 3.6, not 3.8 or w/e
-      # - set common environment vars
-      default:
-        parameters:
-          version:
-            type: string
-            default: "3.6"
-        docker:
-          - image: cimg/python:<< parameters.version >>
-        environment:
-          TERM: screen-256color
-    commands:
-      setup:
-        steps:
-          - checkout
-          # This is worth using over a vanilla invocations task for 2 reasons:
-          # - kinda hard to use invocations if it's not installed yet...
-          # - the python orb is fully integrated with Circle's caching stuff
-          - python/install-packages:
-              # For now, we expect most Pythons 3.6-3.9+ to be happy with the
-              # same pile of dependencies, so this lets us reuse the cache
-              # across matrix cells.
-              include-python-in-cache-key: false
-              pre-install-steps:
-                # This must occur here and not as a regular step; otherwise
-                # cache loading stomps all over it and you get broken pip.
-                - run: pip install pip==21.0.1
-              pkg-manager: pip
-              pip-dependency-file: dev-requirements.txt
-    jobs:
-      test:
-        parameters:
-          version:
-            type: string
-        executor:
-          name: default
-          version: "<< parameters.version >>"
-        steps:
-          - setup
-          - run: inv test
-      coverage:
-        executor: default
-        steps:
-          - setup
-          - run: inv coverage --codecov
-      lint:
-        executor: default
-        steps:
-          - setup
-          - run: flake8
-      format:
-        executor: default
-        steps:
-          - setup
-          - run: inv blacken --check --diff
-      test-release:
-        executor: default
-        steps:
-          - setup
-          - run:
-              command: inv release.all --dry-run
-
+  # TODO: rename the map itself
+  bitprophet: invocations/orb@dev:first-steps
 
 workflows:
   main:
