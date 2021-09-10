@@ -2,6 +2,8 @@
 Changelog
 =========
 
+- :release:`2.0.1 <2021-09-10>`
+- :support:`- backported` Fix up some project metadata.
 - :release:`2.0.0 <2021-09-10>`
 - :support:`-` Dropped support for Python <3.6
 - :support:`-` Added a ``_version`` submodule and imported its

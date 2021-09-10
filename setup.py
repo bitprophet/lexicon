@@ -23,8 +23,8 @@ setup(
     long_description_content_type="text/x-rst",
     author="Jeff Forcier",
     author_email="jeff@bitprophet.org",
+    url="https://github.com/bitprophet/lexicon#what",
     project_urls={
-        "Home": "https://github.com/bitprophet/lexicon#what",
         "Source": "https://github.com/bitprophet/lexicon",
         "Changelog": "https://github.com/bitprophet/lexicon/blob/main/docs/changelog.rst",
         "CI": "https://app.circleci.com/pipelines/github/bitprophet/lexicon",
