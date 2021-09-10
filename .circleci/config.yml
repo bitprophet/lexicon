@@ -1,23 +1,22 @@
 version: 2.1
 
 orbs:
-  # TODO: rename the map itself
-  bitprophet: invocations/orb@dev:first-steps
+  orb: invocations/orb@dev:first-steps
 
 workflows:
   main:
     jobs:
-      - bitprophet/lint:
+      - orb/lint:
           name: Lint
-      - bitprophet/format:
+      - orb/format:
           name: Style check
-      - bitprophet/coverage:
+      - orb/coverage:
           name: Test 3.6 (w/ coverage)
           context: lexicon
-      - bitprophet/test-release:
+      - orb/test-release:
           name: Release test
           context: lexicon
-      - bitprophet/test:
+      - orb/test:
           name: Test << matrix.version >>
           # It's not worth testing on other interpreters if the baseline one
           # failed. Can't run >4 jobs at a time anyhow!
