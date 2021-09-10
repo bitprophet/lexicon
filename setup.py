@@ -26,7 +26,7 @@ setup(
     url="https://github.com/bitprophet/lexicon#what",
     project_urls={
         "Source": "https://github.com/bitprophet/lexicon",
-        "Changelog": "https://github.com/bitprophet/lexicon/blob/main/docs/changelog.rst",
+        "Changelog": "https://github.com/bitprophet/lexicon/blob/main/docs/changelog.rst",  # noqa
         "CI": "https://app.circleci.com/pipelines/github/bitprophet/lexicon",
     },
     packages=["lexicon"],
