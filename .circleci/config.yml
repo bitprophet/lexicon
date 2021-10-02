@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  orb: invocations/orb@1.0.0
+  orb: invocations/orb@1.0.2
 
 workflows:
   main:
@@ -12,10 +12,8 @@ workflows:
           name: Style check
       - orb/coverage:
           name: Test 3.6 (w/ coverage)
-          context: lexicon
       - orb/test-release:
           name: Release test
-          context: lexicon
       - orb/test:
           name: Test << matrix.version >>
           # It's not worth testing on other interpreters if the baseline one
