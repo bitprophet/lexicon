@@ -15,6 +15,7 @@ invocations==2.2.0
 wheel==0.36.2
 twine==1.15.0
 readme_renderer==29.0
+setuptools>56
 # Formatting
 black==19.10b0
 # Linting
