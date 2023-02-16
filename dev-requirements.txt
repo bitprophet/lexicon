@@ -12,7 +12,7 @@ codecov==2.1.11
 invoke>=2
 invocations>=3
 # Release deps
-wheel==0.36.2
+wheel==0.38.1
 twine==1.15.0
 readme_renderer==29.0
 setuptools>56
