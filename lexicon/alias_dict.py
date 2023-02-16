@@ -1,6 +1,6 @@
 class AliasDict(dict):
     def __init__(self, *args, **kwargs):
-        super(AliasDict, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         self.aliases = {}
 
     def alias(self, from_, to):
