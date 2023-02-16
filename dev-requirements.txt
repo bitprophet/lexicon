@@ -4,13 +4,13 @@
 releases==1.6.3
 Sphinx>=1.4,<1.7
 # Testing
-pytest-relaxed==1.1.5
+pytest-relaxed>=2
 # Coverage
 pytest-cov==2.11.1
 codecov==2.1.11
 # Invoke, invocations for release shenanigans etc
-invoke==1.6.0
-invocations==2.2.0
+invoke>=2
+invocations>=3
 # Release deps
 wheel==0.36.2
 twine==1.15.0
