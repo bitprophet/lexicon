@@ -1,8 +1,8 @@
 # Development requirements. There are no runtime/install requirements.
 
 # Docs (changelog)
-releases==1.6.3
-Sphinx>=1.4,<1.7
+releases>=2.1,<3
+Sphinx>=5.3,<6
 # Testing
 pytest-relaxed>=2
 # Coverage
@@ -14,7 +14,7 @@ invocations>=3
 # Release deps
 wheel==0.36.2
 twine==1.15.0
-readme_renderer==29.0
+readme_renderer>=37.3,<38
 setuptools>56
 # Formatting
 black==19.10b0
