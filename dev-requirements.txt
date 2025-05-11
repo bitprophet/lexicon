@@ -7,7 +7,7 @@ Sphinx>=1.4,<1.7
 pytest-relaxed>=2
 # Coverage
 pytest-cov==2.11.1
-codecov==2.1.11
+codecov==2.1.13
 # Invoke, invocations for release shenanigans etc
 invoke>=2
 invocations>=3
