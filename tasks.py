@@ -7,5 +7,5 @@ from invocations.pytest import test, coverage
 
 ns = Collection(test, coverage, release, blacken, docs)
 ns.configure(
-    {"packaging": {"sign": True, "changelog_file": "docs/changelog.rst"}}
+    {"packaging": {"sign": False, "changelog_file": "docs/changelog.rst"}}
 )
