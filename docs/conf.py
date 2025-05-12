@@ -15,9 +15,9 @@ master_doc = "index"
 exclude_patterns = ["_build"]
 default_role = "obj"
 
-project = u"Lexicon"
+project = "Lexicon"
 year = datetime.now().year
-copyright = u"%d Jeff Forcier" % year
+copyright = "%d Jeff Forcier" % year
 
 # Ensure project directory is on PYTHONPATH for version, autodoc access
 sys.path.insert(0, abspath(join(getcwd(), "..")))
