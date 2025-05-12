@@ -1,0 +1,87 @@
+[project]
+name = "lexicon"
+description = "Powerful dict subclass(es) with aliasing & attribute access"
+requires-python = ">=3.9"
+license = "BSD-2-Clause"
+
+authors = [{name = "Jeff Forcier", email = "jeff@bitprophet.org"}]
+readme = "README.rst"
+
+dependencies = []
+
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Software Development",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+dynamic = ["version"]
+license-files = ["LICENSE"]
+
+
+# Sadly, my usual set of URLs isn't fully covered by either the 'well-known' or
+# PyPI-specific sets, so I just use fully human-readable keys that line up with
+# one or both of those when possible, and accept the rest won't get special
+# icon treatment on PyPI or etc.
+[project.urls]
+Homepage = "https://github.com/bitprophet/lexicon#what"
+Source = "https://github.com/bitprophet/lexicon"
+Changelog = "https://github.com/bitprophet/lexicon/blob/main/docs/changelog.rst"
+CI = "https://app.circleci.com/pipelines/github/bitprophet/lexicon"
+
+
+# Being explicit is good; this way we're not leaving it up to a given
+# frontend's default choices (though uv, the one I'm most likely to use, does
+# default to hatchling.)
+[build-system]
+# Tried using hatchling at one point but a) setuptools still feels more widely
+# used/banged-upon + b) hatchling's version tooling was confusing/broken for
+# me.
+requires = ["setuptools >= 77"]
+build-backend = "setuptools.build_meta"
+
+[dependency-groups]
+# Replaces dev-requirements.txt. depending on frontend:
+# - uv: automatically uses 'dev' for install-but-not-publish, cool.
+# - pip >=25.1: can say `pip install --group dev`
+# - hatch: doesn't seem to support yet (had/has its own grouping feature?)
+# - pdm: no idea
+dev = [
+    # Docs (changelog)
+    "releases>=2.1,<3",
+    "Sphinx>=5.3,<6",
+    # Above Sphinx version needs imghdr, removed from stdlib in 3.11ish
+    "standard-imghdr==3.13.0",
+    # Testing
+    "pytest-relaxed>=2",
+    # Coverage
+    "pytest-cov==2.11.1",
+    "codecov==2.1.13",
+    # Invoke, invocations for release shenanigans etc
+    "invoke>=2",
+    "invocations>=3",
+    # Release deps
+    "wheel==0.36.2",
+    'twine==6.1.0',
+    "readme_renderer>=37.3,<38",
+    "setuptools>56",
+    # Formatting
+    "black==23.3.0",
+    # Linting
+    "flake8~=7.3.0",
+    # NOTE: no more "-e ." as in requirements.txt days - most tools, like uv,
+    # will automatically install the project itself (in editable mode) when
+    # syncing deps.
+]

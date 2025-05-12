@@ -42,14 +42,19 @@ power:
 HOW
 ===
 
+Regular use:
+
 - ``pip install lexicon``
 - ``from lexicon import Lexicon`` (or one of the superclasses)
 - Use as needed.
 
-If you have a clone of the source repository, you can run the tests like so:
+Development/hacking/test suite:
 
-- ``pip install -r dev-requirements.txt``
-- ``inv test``
+- Install dev dependencies via any of the following:
+    - ``pip install --group dev`` (assumes pip >= 25.1)
+    - ``uv sync``
+    - anything else that understands PEP 735 dependency groups
+- ``inv test`` (or ``inv --list`` to see other dev tasks)
 
 API
 ===
