@@ -15,11 +15,12 @@ invoke>=2
 invocations>=3
 # Release deps
 wheel==0.36.2
-twine==6.1.0
+twine==6.1.0 ; python_version > "3.7"
+twine==4.0.2 ; python_version == "3.7"
 readme_renderer>=37.3,<38
 setuptools>56
 # Formatting
-black==25.1.0
+black==23.3.0
 # Linting
 flake8==3.6.0
 # Ourselves
