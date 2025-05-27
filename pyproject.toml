@@ -1,13 +1,62 @@
 [project]
 name = "lexicon"
-version = "2.1.0"
+dynamic = ["version"]
 requires-python = ">=3.7"
-# That's right, we have NO release dependencies!
 dependencies = []
 
+readme = "README.rst"
+description="Powerful dict subclass(es) with aliasing & attribute access"
+license="BSD"
+author="Jeff Forcier"
+author_email="jeff@bitprophet.org"
+url="https://github.com/bitprophet/lexicon#what"
+project_urls={
+    "Source": "https://github.com/bitprophet/lexicon",
+    "Changelog": "https://github.com/bitprophet/lexicon/blob/main/docs/changelog.rst",  # noqa
+    "CI": "https://app.circleci.com/pipelines/github/bitprophet/lexicon",
+}
+python_requires=">=3.6"
+classifiers=[
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: Unix",
+    "Operating System :: POSIX",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Software Development",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+# Being explicit is good; this way we're not leaving it up to a given
+# frontend's default choices (though uv, the one I'm most likely to use, does
+# default to hatchling.)
+[build-system]
+# Hatchling seems like the "best for certain values of best" default these
+# days, and this is the latest version which supports Python 3.7.
+# Could use flit for simple projects like this one too, but I like consistency
+# and some of my projects /definitely/ need setuptools/hatchling/etc.
+#requires = ["hatchling >= 1.17.1"]
+#build-backend = "hatchling.build"
+requires = ["setuptools >= 68"]
+build-backend = "setuptools.build_meta"
+
 [dependency-groups]
-# This group gets special-cased by uv, but the dependency-groups feature is
-# part of the generic spec so other tools may also 'see' it.
+# Replaces dev-requirements.txt. depending on frontend:
+# - uv: automatically uses 'dev' for install-but-not-publish, cool.
+# - pip >=25.1 (python >=3.9): can say `pip install --group dev`
+# - hatch: doesn't seem to support yet (had/has its own grouping feature?)
+# - pdm: no idea
 dev = [
     # Docs (changelog)
     "releases>=2.1,<3",
@@ -25,8 +74,8 @@ dev = [
     # Release deps
     "wheel==0.36.2",
     # TODO: switch to table format?
-    "twine==6.1.0 ; python_version > 3.7",
-    "twine==4.0.2 ; python_version == 3.7",
+    'twine==6.1.0 ; python_version > "3.7"',
+    'twine==4.0.2 ; python_version == "3.7"',
     "readme_renderer>=37.3,<38",
     "setuptools>56",
     # Formatting

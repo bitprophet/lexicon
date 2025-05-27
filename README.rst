@@ -48,7 +48,10 @@ HOW
 
 If you have a clone of the source repository, you can run the tests like so:
 
-- ``pip install -r dev-requirements.txt``
+- Install dev dependencies:
+    - ``pip install --group dev`` (assumes pip >= 25.1)
+    - ``uv sync``
+    - anything else that understands PEP 735 dependency groups
 - ``inv test``
 
 API
