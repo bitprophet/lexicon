@@ -5,6 +5,9 @@ requires-python = ">=3.9"
 license = "BSD-2-Clause"
 
 authors = [{name = "Jeff Forcier", email = "jeff@bitprophet.org"}]
+# NOTE: this seems to 'just work' these days? no need for manually dynamic
+# long_description anymore; pypi appears to slurp up what this refers to & use
+# it as the readme on the release/project page?
 readme = "README.rst"
 
 dependencies = []
