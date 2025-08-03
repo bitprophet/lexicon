@@ -92,6 +92,22 @@ wheels = [
 ]
 
 [[package]]
+name = "build"
+version = "1.3.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "colorama", marker = "os_name == 'nt'" },
+    { name = "importlib-metadata", marker = "python_full_version < '3.10.2'" },
+    { name = "packaging" },
+    { name = "pyproject-hooks" },
+    { name = "tomli", marker = "python_full_version < '3.11'" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/25/1c/23e33405a7c9eac261dff640926b8b5adaed6a6eb3e1767d441ed611d0c0/build-1.3.0.tar.gz", hash = "sha256:698edd0ea270bde950f53aed21f3a0135672206f3911e0176261a31e0e07b397", size = 48544, upload-time = "2025-08-01T21:27:09.268Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/cb/8c/2b30c12155ad8de0cf641d76a8b396a16d2c36bc6d50b621a62b7c4567c1/build-1.3.0-py3-none-any.whl", hash = "sha256:7145f0b5061ba90a1500d60bd1b13ca0a8a4cebdd0cc16ed8adf1c0e739f43b4", size = 23382, upload-time = "2025-08-01T21:27:07.844Z" },
+]
+
+[[package]]
 name = "certifi"
 version = "2025.7.14"
 source = { registry = "https://pypi.org/simple" }
@@ -504,10 +520,11 @@ wheels = [
 
 [[package]]
 name = "invocations"
-version = "3.3.0"
+version = "4.0.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "blessings" },
+    { name = "build" },
     { name = "invoke" },
     { name = "releases" },
     { name = "semantic-version" },
@@ -516,9 +533,9 @@ dependencies = [
     { name = "twine" },
     { name = "wheel" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/93/6d/094a0bdc46e2e00ad00e02415525c708c708b0509085727853a62cea6f4c/invocations-3.3.0.tar.gz", hash = "sha256:caa950dad1842f89074e4bc241958dc3acc3b36c39a94e8c08c3ea5b5f7e992f", size = 226122, upload-time = "2023-05-15T21:53:41.827Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/2a/bf/741bcf305f05e7ada31e037428d03c084102ae84bc7748f30c469504244c/invocations-4.0.1.tar.gz", hash = "sha256:9a511b5207d7777744c355d32796246937a088473338667a858c524762f3a032", size = 55049, upload-time = "2025-08-04T00:17:34.685Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/13/bb/a025d9fe9d29f961cb41301d09ad3a53a32956e8963360c7245a916d5193/invocations-3.3.0-py3-none-any.whl", hash = "sha256:7983c969c8e5f5fe711bee49ea6ba0af019f9b535e9fbf07661ff01b1fc2eb3f", size = 34182, upload-time = "2023-05-15T21:53:40.342Z" },
+    { url = "https://files.pythonhosted.org/packages/f3/f7/bdc58c2554b09943786444af16eac2580509eb497c2f24890f7120ea8138/invocations-4.0.1-py3-none-any.whl", hash = "sha256:ba13ac9fe2957c46091b5ed12f8d60b4c315e7b40a5e945019f0f2aec043baca", size = 33865, upload-time = "2025-08-04T00:17:33.689Z" },
 ]
 
 [[package]]
@@ -607,6 +624,7 @@ wheels = [
 
 [[package]]
 name = "lexicon"
+version = "3.0.0"
 source = { editable = "." }
 
 [package.dev-dependencies]
@@ -618,13 +636,9 @@ dev = [
     { name = "invoke" },
     { name = "pytest-cov" },
     { name = "pytest-relaxed" },
-    { name = "readme-renderer" },
     { name = "releases" },
-    { name = "setuptools" },
     { name = "sphinx" },
     { name = "standard-imghdr" },
-    { name = "twine" },
-    { name = "wheel" },
 ]
 
 [package.metadata]
@@ -634,17 +648,13 @@ dev = [
     { name = "black", specifier = "==23.3.0" },
     { name = "codecov", specifier = "==2.1.13" },
     { name = "flake8", specifier = "~=7.3.0" },
-    { name = "invocations", specifier = ">=3" },
+    { name = "invocations", specifier = ">=4.0.1" },
     { name = "invoke", specifier = ">=2" },
     { name = "pytest-cov", specifier = "==2.11.1" },
     { name = "pytest-relaxed", specifier = ">=2" },
-    { name = "readme-renderer", specifier = ">=37.3,<38" },
     { name = "releases", specifier = ">=2.1,<3" },
-    { name = "setuptools", specifier = ">56" },
     { name = "sphinx", specifier = ">=5.3,<6" },
     { name = "standard-imghdr", specifier = "==3.13.0" },
-    { name = "twine", specifier = "==6.1.0" },
-    { name = "wheel", specifier = "==0.36.2" },
 ]
 
 [[package]]
@@ -836,6 +846,15 @@ wheels = [
 ]
 
 [[package]]
+name = "pyproject-hooks"
+version = "1.2.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/e7/82/28175b2414effca1cdac8dc99f76d660e7a4fb0ceefa4b4ab8f5f6742925/pyproject_hooks-1.2.0.tar.gz", hash = "sha256:1e859bd5c40fae9448642dd871adf459e5e2084186e8d2c2a79a824c970da1f8", size = 19228, upload-time = "2024-09-29T09:24:13.293Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/bd/24/12818598c362d7f300f18e74db45963dbcb85150324092410c8b49405e42/pyproject_hooks-1.2.0-py3-none-any.whl", hash = "sha256:9e5c6bfa8dcc30091c74b0cf803c81fdd29d94f01992a7707bc97babb1141913", size = 10216, upload-time = "2024-09-29T09:24:11.978Z" },
+]
+
+[[package]]
 name = "pytest"
 version = "8.4.1"
 source = { registry = "https://pypi.org/simple" }
@@ -984,15 +1003,6 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/72/83/f76958017f3094b072d8e3a72d25c3ed65f754cc607fdb6a7b33d84ab1d5/semantic_version-2.6.0.tar.gz", hash = "sha256:2a4328680073e9b243667b201119772aefc5fc63ae32398d6afafff07c4f54c0", size = 13919, upload-time = "2016-09-25T14:22:57.563Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/28/be/3a7241d731ba89063780279a5433f5971c1cf41735b64a9f874b7c3ff995/semantic_version-2.6.0-py3-none-any.whl", hash = "sha256:2d06ab7372034bcb8b54f2205370f4aa0643c133b7e6dbd129c5200b83ab394b", size = 14175, upload-time = "2016-09-25T14:23:00.423Z" },
-]
-
-[[package]]
-name = "setuptools"
-version = "80.9.0"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/18/5d/3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fca/setuptools-80.9.0.tar.gz", hash = "sha256:f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c", size = 1319958, upload-time = "2025-05-27T00:56:51.443Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/a3/dc/17031897dae0efacfea57dfd3a82fdd2a2aeb58e0ff71b77b87e44edc772/setuptools-80.9.0-py3-none-any.whl", hash = "sha256:062d34222ad13e0cc312a4c02d73f059e86a4acbfbdea8f8f76b28c99f306922", size = 1201486, upload-time = "2025-05-27T00:56:49.664Z" },
 ]
 
 [[package]]
