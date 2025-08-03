@@ -71,12 +71,11 @@ dev = [
     "codecov==2.1.13",
     # Invoke, invocations for release shenanigans etc
     "invoke>=2",
-    "invocations>=3",
+    "invocations>=4",
     # Release deps
-    "wheel==0.36.2",
-    'twine==6.1.0',
     "readme_renderer>=37.3,<38",
-    "setuptools>56",
+    "twine==6.1.0",
+    "wheel==0.36.2",
     # Formatting
     "black==23.3.0",
     # Linting
