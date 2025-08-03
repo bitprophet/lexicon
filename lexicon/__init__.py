@@ -1,4 +1,6 @@
-from ._version import __version_info__, __version__  # noqa
+from importlib import metadata
+__version__ = metadata.version("lexicon")
+
 from .attribute_dict import AttributeDict
 from .alias_dict import AliasDict
 

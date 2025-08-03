@@ -3,12 +3,14 @@ name = "lexicon"
 description = "Powerful dict subclass(es) with aliasing & attribute access"
 requires-python = ">=3.9"
 license = "BSD-2-Clause"
+version = "3.0.0"
 
 authors = [{name = "Jeff Forcier", email = "jeff@bitprophet.org"}]
 # NOTE: this seems to 'just work' these days? no need for manually dynamic
 # long_description anymore; pypi appears to slurp up what this refers to & use
 # it as the readme on the release/project page?
 readme = "README.rst"
+license-files = ["LICENSE"]
 
 dependencies = []
 
@@ -29,9 +31,6 @@ classifiers = [
     "Topic :: Software Development :: Libraries",
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
-
-dynamic = ["version"]
-license-files = ["LICENSE"]
 
 
 # Sadly, my usual set of URLs isn't fully covered by either the 'well-known' or
@@ -75,10 +74,6 @@ dev = [
     # Invoke, invocations for release shenanigans etc
     "invoke>=2",
     "invocations>=4",
-    # Release deps
-    "readme_renderer>=37.3,<38",
-    "twine==6.1.0",
-    "wheel==0.36.2",
     # Formatting
     "black==23.3.0",
     # Linting
