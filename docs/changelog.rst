@@ -2,6 +2,7 @@
 Changelog
 =========
 
+- :release:`3.0.0 <2025-08-03>`
 - :support:`-` Dropped support for Python <3.9
 - :support:`-` Modernized project metadata re: Python interpreters, development
   dependencies, etc.
