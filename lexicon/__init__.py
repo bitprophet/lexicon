@@ -1,4 +1,5 @@
 from importlib import metadata
+
 __version__ = metadata.version("lexicon")
 
 from .attribute_dict import AttributeDict
