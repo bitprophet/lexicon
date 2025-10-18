@@ -72,7 +72,7 @@ dev = [
   "pytest-cov==2.11.1",
   "codecov==2.1.13",
   # Invoke, invocations for release shenanigans etc
-  "invoke>=2",
+  "invoke>=2.2.1",
   "invocations>=4.0.1",
   # Formatting
   "black==23.3.0",
